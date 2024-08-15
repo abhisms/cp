@@ -4,7 +4,7 @@ const cors = require('cors');
 const path = require('path')
 const countsRouter = require('./routes/counts')
 env.config()
-
+const PORT =process.env.PORT || 5000
 ConnectMongo()
 
 const express = require('express');
