@@ -1,0 +1,20 @@
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+    gap: 16px;
+}
+
+.custom-blue-button {
+    background-color: #007bff;
+    border-color: #007bff;
+    color: white;
+    float: right;
+}
+
+.custom-blue-button:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+
+  
