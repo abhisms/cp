@@ -33,7 +33,7 @@ const EditJobModal = ({ item, setJobs }) => {
     const [change, setChange] = useState(false);
 
     useEffect(() => {
-        axios.get("https://cp-backend-jx53.onrender.com/api/category/get")
+        axios.get("https://cp-backend-e04k.onrender.com/api/category/get")
             .then((res) => {
                 setCategory(res.data.category);
             })
@@ -43,7 +43,7 @@ const EditJobModal = ({ item, setJobs }) => {
     }, []);
 
     useEffect(() => {
-        axios.get(`https://cp-backend-jx53.onrender.com/api/job/get/${id}`)
+        axios.get(`https://cp-backend-e04k.onrender.com/api/job/get/${id}`)
             .then((res) => {
                 setJobs(res.data.jobList);
                 console.log(res.data.jobList);
@@ -76,7 +76,7 @@ const EditJobModal = ({ item, setJobs }) => {
         formData.append("last_date", newJobs.last_date);
         formData.append("cover_photo", newJobs.cover_photo);
 
-        axios.put(`https://cp-backend-jx53.onrender.com/api/job/update/${newJobs._id}`, formData)
+        axios.put(`https://cp-backend-e04k.onrender.com/api/job/update/${newJobs._id}`, formData)
             .then((res) => {
                 if (res.data.success) {
                     alert("Jobs updated successfully");
@@ -253,7 +253,7 @@ const DeleteJobModal = ({ item, setJobs }) => {
     const navigate = useNavigate();
     const handleDelete = (id) => {
         if (window.confirm("Are you sure you want to delete this?")) {
-            axios.delete(`https://cp-backend-jx53.onrender.com/api/job/delete/${id}`)
+            axios.delete(`https://cp-backend-e04k.onrender.com/api/job/delete/${id}`)
                 .then((res) => {
                     if (res.data.success) {
                         alert("Deleted successfully");
@@ -286,7 +286,7 @@ const JobsDescription = ({ role }) => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        axios.get(`https://cp-backend-jx53.onrender.com/api/job/get/${id}`)
+        axios.get(`https://cp-backend-e04k.onrender.com/api/job/get/${id}`)
             .then((res) => {
                 setJobs(res.data.jobList);
                 console.log(res.data.jobList);
@@ -299,7 +299,7 @@ const JobsDescription = ({ role }) => {
     useEffect(() => {
         if (role === 'student') {
             const student_id = localStorage.getItem('id').replace(/['"]+/g, '');
-            axios.get(`https://cp-backend-jx53.onrender.com/api/application/check/${student_id}/${id}`)
+            axios.get(`https://cp-backend-e04k.onrender.com/api/application/check/${student_id}/${id}`)
                 .then((res) => {
                     setApplied(res.data.applied);
                 })
@@ -322,7 +322,7 @@ const JobsDescription = ({ role }) => {
                     </CCardHeader>
                     <CCardBody>
                         <br />
-                        <CCardImage orientation="top" style={{ height: "200px", width: "200px" }} src={`https://cp-backend-jx53.onrender.com/api/upload/${jobs.cover_photo}`} />
+                        <CCardImage orientation="top" style={{ height: "200px", width: "200px" }} src={`https://cp-backend-e04k.onrender.com/api/upload/${jobs.cover_photo}`} />
                         <br />
                         <br />
                         <CCardText>

@@ -40,7 +40,7 @@ const NewPassword = () => {
             return
         }
 
-        axios.post("https://cp-backend-jx53.onrender.com/api/newpassword/newpass", passwordData)
+        axios.post("https://cp-backend-e04k.onrender.com/api/newpassword/newpass", passwordData)
             .then((res) => {
                 console.log(res)
                 if (res.data.success) {

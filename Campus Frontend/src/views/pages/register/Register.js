@@ -43,7 +43,7 @@ const Register = () => {
     formData.append("password", register_details.password)
     formData.append("profile", register_details.profile)
 
-    axios.post("https://cp-backend-jx53.onrender.com/api/admin/insert", formData)
+    axios.post("https://cp-backend-e04k.onrender.com/api/admin/insert", formData)
       .then((res) => {
         console.log(res.data.success, 2222)
         if (res.data.success) {

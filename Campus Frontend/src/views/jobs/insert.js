@@ -34,7 +34,7 @@ const FC = () => {
     formData.append("last_date", jobs.last_date)
     formData.append("cover_photo", jobs.cover_photo)
 
-    axios.post("https://cp-backend-jx53.onrender.com/api/job/insert", formData)
+    axios.post("https://cp-backend-e04k.onrender.com/api/job/insert", formData)
       .then((res) => {
         console.log(res)
         if (res.data.success) {
@@ -50,7 +50,7 @@ const FC = () => {
   }
   const [category, setCategory] = useState([])
   useEffect(() => {
-    axios.get("https://cp-backend-jx53.onrender.com/api/category/get")
+    axios.get("https://cp-backend-e04k.onrender.com/api/category/get")
       .then((res) => {
         console.log(res)
         setCategory(res.data.category);

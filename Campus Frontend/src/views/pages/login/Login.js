@@ -40,7 +40,7 @@ const Login = ({ setRole }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    axios.post("https://cp-backend-jx53.onrender.com/api/all/login", login_details)
+    axios.post("https://cp-backend-e04k.onrender.com/api/all/login", login_details)
       .then((res) => {
         console.log(res)
         if (res.data.success) {

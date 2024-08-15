@@ -8,7 +8,7 @@ const po = () => {
     const fetchUserName = async () => {
       try {
         const userId = localStorage.getItem('id');
-        const response = await axios.get(`https://cp-backend-jx53.onrender.com/api/placement/GetById/${userId.replace(/['"]+/g, '')}`);
+        const response = await axios.get(`https://cp-backend-e04k.onrender.com/api/placement/GetById/${userId.replace(/['"]+/g, '')}`);
 
         if (response.data.success) {
           setUserName(response.data.placement_officer.p_name);

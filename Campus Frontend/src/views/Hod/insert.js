@@ -31,7 +31,7 @@ const FC = () => {
     formData.append("branch_id", hod.branch_id)
     formData.append("h_photo", hod.h_photo)
 
-    axios.post("https://cp-backend-jx53.onrender.com/api/hod/insert", formData)
+    axios.post("https://cp-backend-e04k.onrender.com/api/hod/insert", formData)
       .then((res) => {
         console.log(res)
         if (res.data.success) {
@@ -47,7 +47,7 @@ const FC = () => {
   }
   const [branch, setBranch] = useState([])
   useEffect(() => {
-    axios.get("https://cp-backend-jx53.onrender.com/api/branch/get")
+    axios.get("https://cp-backend-e04k.onrender.com/api/branch/get")
       .then((res) => {
         setBranch(res.data.branch);
       })
