@@ -82,7 +82,7 @@ const AppHeaderDropdownStudent = () => {
 
     const fetchStudentDetails = async () => {
       try {
-        const response = await axios.get(`https://cp-backend-e04k.onrender.com/api/student/GetById/${loggedInUserId.replace(/"/g, '')}`);
+        const response = await axios.get(`https://cp-backend-ewpv.onrender.com/api/student/GetById/${loggedInUserId.replace(/"/g, '')}`);
         console.log('Student details response:', response);
 
         if (response.data && response.data.student) {
@@ -156,7 +156,7 @@ const AppHeaderDropdownStudent = () => {
           newFormData.append('s_resume', newResume);
         }
 
-        const response = await axios.put(`https://cp-backend-e04k.onrender.com/api/student/update/${student._id}`, newFormData);
+        const response = await axios.put(`https://cp-backend-ewpv.onrender.com/api/student/update/${student._id}`, newFormData);
         console.log(response);
         setStudent(response.data.student);
         setModalVisible(false);
@@ -183,7 +183,7 @@ const AppHeaderDropdownStudent = () => {
     <CDropdown variant="nav-item">
       <CDropdownToggle placement="bottom-end" className="py-0 pe-0" caret={false}>
         <CAvatar
-          src={`https://cp-backend-e04k.onrender.com/api/upload/photo/${formData.s_photo}`}
+          src={`https://cp-backend-ewpv.onrender.com/api/upload/photo/${formData.s_photo}`}
           alt="profile"
           style={{ borderRadius: '100%', objectFit: 'cover' }}
         />
@@ -208,7 +208,7 @@ const AppHeaderDropdownStudent = () => {
                   <img
                     style={{ height: "50px", width: "50px", cursor: 'pointer' }}
                     alt="Profile"
-                    src={`https://cp-backend-e04k.onrender.com/api/upload/photo/${student.s_photo}`}
+                    src={`https://cp-backend-ewpv.onrender.com/api/upload/photo/${student.s_photo}`}
                     onClick={handlePhotoClick}
                   />
                 ) : (
@@ -298,7 +298,7 @@ const AppHeaderDropdownStudent = () => {
               <div className="mb-3">
                 <CFormLabel htmlFor="s_resume" style={{ marginRight: '16px' }}>Your Resume</CFormLabel>
                 {!isEditing ? (
-                  <a href={`https://cp-backend-e04k.onrender.com/api/upload/resume/${student.s_resume}`} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'yellow' }}>
+                  <a href={`https://cp-backend-ewpv.onrender.com/api/upload/resume/${student.s_resume}`} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'yellow' }}>
                     {student.s_resume}
                   </a>
                 ) : (
@@ -329,7 +329,7 @@ const AppHeaderDropdownStudent = () => {
             <CModalTitle>Profile Photo</CModalTitle>
           </CModalHeader>
           <CModalBody>
-            <CImage fluid src={`https://cp-backend-e04k.onrender.com/api/upload/photo/${student.s_photo}`} alt="Profile" />
+            <CImage fluid src={`https://cp-backend-ewpv.onrender.com/api/upload/photo/${student.s_photo}`} alt="Profile" />
           </CModalBody>
           <CModalFooter>
             <CButton color="secondary" onClick={() => setPhotoModalVisible(false)}>

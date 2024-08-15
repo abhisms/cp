@@ -8,7 +8,7 @@ const StudentDashboard = () => {
     const fetchUserName = async () => {
       try {
         const userId = localStorage.getItem('id');
-        const response = await axios.get(`https://cp-backend-e04k.onrender.com/api/student/GetById/${userId.replace(/['"]+/g, '')}`);
+        const response = await axios.get(`https://cp-backend-ewpv.onrender.com/api/student/GetById/${userId.replace(/['"]+/g, '')}`);
 
         if (response.data.success) {
           setUserName(response.data.student.s_name);

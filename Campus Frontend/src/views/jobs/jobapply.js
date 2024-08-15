@@ -35,7 +35,7 @@ const ApplyJob = () => {
 
     useEffect(() => {
         // Fetch job details using job ID
-        axios.get(`https://cp-backend-e04k.onrender.com/api/job/get/${id}`)
+        axios.get(`https://cp-backend-ewpv.onrender.com/api/job/get/${id}`)
             .then((res) => {
                 setJob(res.data.jobList);
                 setFormData((prevData) => ({
@@ -57,7 +57,7 @@ const ApplyJob = () => {
             return;
         }
 
-        axios.get(`https://cp-backend-e04k.onrender.com/api/student/GetById/${student_id.replace(/['"]+/g, '')}`)
+        axios.get(`https://cp-backend-ewpv.onrender.com/api/student/GetById/${student_id.replace(/['"]+/g, '')}`)
        
             .then((res) => {
                 const student = res.data.student;
@@ -78,7 +78,7 @@ const ApplyJob = () => {
 
     useEffect(() => {
         // Fetch branch data
-        axios.get("https://cp-backend-e04k.onrender.com/api/branch/get")
+        axios.get("https://cp-backend-ewpv.onrender.com/api/branch/get")
             .then((res) => {
                 setBranch(res.data.branch);
             })
@@ -118,7 +118,7 @@ const ApplyJob = () => {
             course_id: formData.course_id
         });
 
-        axios.post('https://cp-backend-e04k.onrender.com/api/application/insert', data)
+        axios.post('https://cp-backend-ewpv.onrender.com/api/application/insert', data)
             .then((res) => {
                 if (res.data.success) {
                     alert('Application submitted successfully');

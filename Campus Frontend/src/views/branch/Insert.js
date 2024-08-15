@@ -20,7 +20,7 @@ const FormControl = () => {
   let nav = useNavigate()
   const handleSubmit = (e) => {
     e.preventDefault()
-    axios.post("https://cp-backend-e04k.onrender.com/api/branch/insert", { branch_name: branch })
+    axios.post("https://cp-backend-ewpv.onrender.com/api/branch/insert", { branch_name: branch })
       .then((res) => {
         console.log(res)
         if (res.data.success) {

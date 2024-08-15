@@ -77,7 +77,7 @@ const AppHeaderDropdownHOD = () => {
 
     const fetchHodDetails = async () => {
       try {
-        const response = await axios.get(`https://cp-backend-e04k.onrender.com/api/hod/GetById/${loggedInUserId.replace(/"/g, '')}`);
+        const response = await axios.get(`https://cp-backend-ewpv.onrender.com/api/hod/GetById/${loggedInUserId.replace(/"/g, '')}`);
         
         if (response.data && response.data.hod) {
           const foundHod = response.data.hod;
@@ -138,7 +138,7 @@ const AppHeaderDropdownHOD = () => {
           newFormData.append('h_photo', newImage);
         }
 
-        const response = await axios.put(`https://cp-backend-e04k.onrender.com/api/hod/update/${hod._id}`, newFormData);
+        const response = await axios.put(`https://cp-backend-ewpv.onrender.com/api/hod/update/${hod._id}`, newFormData);
         console.log(response);
         setHod(response.data.hod);
         setModalVisible(false);
@@ -161,7 +161,7 @@ const AppHeaderDropdownHOD = () => {
     <CDropdown variant="nav-item">
       <CDropdownToggle placement="bottom-end" className="py-0 pe-0" caret={false}>
         <CAvatar
-          src={`https://cp-backend-e04k.onrender.com/api/upload/${formData.h_photo}`}
+          src={`https://cp-backend-ewpv.onrender.com/api/upload/${formData.h_photo}`}
           alt="profile"
           style={{ borderRadius: '100%', objectFit: 'cover' }}
         />
@@ -185,7 +185,7 @@ const AppHeaderDropdownHOD = () => {
                   <img
                     style={{ height: "50px", width: "50px", cursor: 'pointer' }}
                     alt="Profile"
-                    src={`https://cp-backend-e04k.onrender.com/api/upload/${formData.h_photo}`}
+                    src={`https://cp-backend-ewpv.onrender.com/api/upload/${formData.h_photo}`}
                     onClick={handlePhotoClick}
                   />
                 ) : (
@@ -270,7 +270,7 @@ const AppHeaderDropdownHOD = () => {
             <CModalTitle>Profile Photo</CModalTitle>
           </CModalHeader>
           <CModalBody>
-            <CImage fluid src={`https://cp-backend-e04k.onrender.com/api/upload/${formData.h_photo}`} alt="Profile" />
+            <CImage fluid src={`https://cp-backend-ewpv.onrender.com/api/upload/${formData.h_photo}`} alt="Profile" />
           </CModalBody>
           <CModalFooter>
             <CButton color="secondary" onClick={() => setPhotoModalVisible(false)}>

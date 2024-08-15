@@ -77,7 +77,7 @@ const AppHeaderDropdownPO = () => {
 
     const fetchPlacementOfficerDetails = async () => {
       try {
-        const response = await axios.get(`https://cp-backend-e04k.onrender.com/api/placement/GetById/${loggedInUserId.replace(/"/g, '')}`);
+        const response = await axios.get(`https://cp-backend-ewpv.onrender.com/api/placement/GetById/${loggedInUserId.replace(/"/g, '')}`);
         
         if (response.data && response.data.placement_officer) {
           const foundPlacementOfficer = response.data.placement_officer;
@@ -140,7 +140,7 @@ const AppHeaderDropdownPO = () => {
           newFormData.append('p_photo', newImage);
         }
 
-        const response = await axios.put(`https://cp-backend-e04k.onrender.com/api/placement/update/${placement_officer._id}`, newFormData);
+        const response = await axios.put(`https://cp-backend-ewpv.onrender.com/api/placement/update/${placement_officer._id}`, newFormData);
        console.log(response)
         setPlacementOfficer(response.data.placement_officer);
         setModalVisible(false);
@@ -159,7 +159,7 @@ const AppHeaderDropdownPO = () => {
     <CDropdown variant="nav-item">
       <CDropdownToggle placement="bottom-end" className="py-0 pe-0" caret={false}>
         <CAvatar
-          src={`https://cp-backend-e04k.onrender.com/api/upload/${formData.p_photo}`}
+          src={`https://cp-backend-ewpv.onrender.com/api/upload/${formData.p_photo}`}
           alt="profile"
           style={{ borderRadius: '100%', objectFit: 'cover' }}
         />
@@ -183,7 +183,7 @@ const AppHeaderDropdownPO = () => {
                   <img
                     style={{ height: "50px", width: "50px", cursor: 'pointer' }}
                     alt="Profile"
-                    src={`https://cp-backend-e04k.onrender.com/api/upload/${formData.p_photo}`}
+                    src={`https://cp-backend-ewpv.onrender.com/api/upload/${formData.p_photo}`}
                     onClick={handlePhotoClick}
                   />
                 ) : (
@@ -258,7 +258,7 @@ const AppHeaderDropdownPO = () => {
             <CModalTitle>Profile Photo</CModalTitle>
           </CModalHeader>
           <CModalBody>
-            <CImage fluid src={`https://cp-backend-e04k.onrender.com/api/upload/${formData.p_photo}`} alt="Profile" />
+            <CImage fluid src={`https://cp-backend-ewpv.onrender.com/api/upload/${formData.p_photo}`} alt="Profile" />
           </CModalBody>
           <CModalFooter>
             <CButton color="secondary" onClick={() => setPhotoModalVisible(false)}>

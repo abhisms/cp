@@ -32,7 +32,7 @@ const Tables = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get("https://cp-backend-e04k.onrender.com/api/hod/get")
+    axios.get("https://cp-backend-ewpv.onrender.com/api/hod/get")
       .then((res) => {
         console.log(res);
         setHod(res.data.hod);
@@ -66,7 +66,7 @@ const Tables = () => {
       formData.append("branch_id", newHod.branch_id)
       formData.append("h_photo", newHod.h_photo)
 
-      axios.put(`https://cp-backend-e04k.onrender.com/api/hod/update/${newHod._id}`, formData)
+      axios.put(`https://cp-backend-ewpv.onrender.com/api/hod/update/${newHod._id}`, formData)
         .then((res) => {
           if (res.data.success) {
             alert("HOD updated successfully");
@@ -90,7 +90,7 @@ const Tables = () => {
 
     const [branch, setBranch] = useState([])
     useEffect(() => {
-      axios.get("https://cp-backend-e04k.onrender.com/api/branch/get")
+      axios.get("https://cp-backend-ewpv.onrender.com/api/branch/get")
         .then((res) => {
           setBranch(res.data.branch);
         })
@@ -198,7 +198,7 @@ const Tables = () => {
 
   const handleDelete = (id) => {
     if (window.confirm("Are you sure you want to delete this?")) {
-      axios.delete(`https://cp-backend-e04k.onrender.com/api/hod/delete/${id}`)
+      axios.delete(`https://cp-backend-ewpv.onrender.com/api/hod/delete/${id}`)
         .then((res) => {
           if (res.data.success) {
             alert("Deleted successfully");
@@ -248,7 +248,7 @@ const Tables = () => {
                       <img
                         style={{ height: "100px", width: "100px" }}
                         alt=""
-                        src={`https://cp-backend-e04k.onrender.com/api/upload/${item.h_photo}`}
+                        src={`https://cp-backend-ewpv.onrender.com/api/upload/${item.h_photo}`}
                       />
                     </CTableDataCell>
                     <CTableDataCell>

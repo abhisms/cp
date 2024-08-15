@@ -32,7 +32,7 @@ const Tables = (role) => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get("https://cp-backend-e04k.onrender.com/api/student/get")
+    axios.get("https://cp-backend-ewpv.onrender.com/api/student/get")
       .then((res) => {
         setStudent(res.data.student);
       })
@@ -66,7 +66,7 @@ const Tables = (role) => {
       formData.append("s_photo", newStudent.s_photo);
       formData.append("s_resume", newStudent.s_resume);
 
-      axios.put(`https://cp-backend-e04k.onrender.com/api/student/update/${newStudent._id}`, formData)
+      axios.put(`https://cp-backend-ewpv.onrender.com/api/student/update/${newStudent._id}`, formData)
         .then((res) => {
           if (res.data.success) {
             alert("Student updated successfully");
@@ -88,7 +88,7 @@ const Tables = (role) => {
 
     const [branch, setBranch] = useState([]);
     useEffect(() => {
-      axios.get("https://cp-backend-e04k.onrender.com/api/branch/get")
+      axios.get("https://cp-backend-ewpv.onrender.com/api/branch/get")
         .then((res) => {
           setBranch(res.data.branch);
         })
@@ -99,7 +99,7 @@ const Tables = (role) => {
 
     const [hod, setHod] = useState([]);
     useEffect(() => {
-      axios.get("https://cp-backend-e04k.onrender.com/api/hod/get")
+      axios.get("https://cp-backend-ewpv.onrender.com/api/hod/get")
         .then((res) => {
           setHod(res.data.hod);
         })
@@ -235,7 +235,7 @@ const Tables = (role) => {
 
   const handleDelete = (id) => {
     if (window.confirm("Are you sure you want to delete this student?")) {
-      axios.delete(`https://cp-backend-e04k.onrender.com/api/student/delete/${id}`)
+      axios.delete(`https://cp-backend-ewpv.onrender.com/api/student/delete/${id}`)
         .then((res) => {
           if (res.data.success) {
             alert("Deleted successfully");
@@ -290,8 +290,8 @@ const Tables = (role) => {
                     <CTableDataCell>{item.register_no}</CTableDataCell>
                     <CTableDataCell>{item.branch_id.branch_name}</CTableDataCell>
                     <CTableDataCell>{item.hod_id.h_name}</CTableDataCell>
-                    <CTableDataCell><img style={{ height: "50px", width: "50px", objectFit: "cover" }} src={`https://cp-backend-e04k.onrender.com/api/upload/photo/${item.s_photo}`} alt="Student" /></CTableDataCell>
-                    <CTableDataCell><a href={`https://cp-backend-e04k.onrender.com/api/upload/resume/${item.s_resume}`} target="_blank" rel="noopener noreferrer">Resume</a></CTableDataCell>
+                    <CTableDataCell><img style={{ height: "50px", width: "50px", objectFit: "cover" }} src={`https://cp-backend-ewpv.onrender.com/api/upload/photo/${item.s_photo}`} alt="Student" /></CTableDataCell>
+                    <CTableDataCell><a href={`https://cp-backend-ewpv.onrender.com/api/upload/resume/${item.s_resume}`} target="_blank" rel="noopener noreferrer">Resume</a></CTableDataCell>
                     <CTableDataCell className="d-flex">
                       <Edit item={item} />
                       {role=='admin' && 'hod'(

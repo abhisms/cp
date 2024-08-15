@@ -16,7 +16,7 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchCounts = async () => {
       try {
-        const response = await axios.get('https://cp-backend-e04k.onrender.com/api/counts')
+        const response = await axios.get('https://cp-backend-ewpv.onrender.com/api/counts')
         setCounts(response.data)
       } catch (error) {
         console.error('There was an error fetching the counts!', error)
