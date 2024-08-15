@@ -31,7 +31,7 @@ const Tables = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get("http://localhost:5000/api/placement/get")
+    axios.get("https://cp-backend-jx53.onrender.com/api/placement/get")
       .then((res) => {
         console.log(res)
         setPlacement_officer(res.data.placement_officer);
@@ -64,7 +64,7 @@ const Tables = () => {
       formData.append("p_email", newPlacement_officer.p_email)
       formData.append("p_address", newPlacement_officer.p_address)
       formData.append("p_photo", newPlacement_officer.p_photo)
-      axios.put(`http://localhost:5000/api/placement/update/${newPlacement_officer._id}`, formData)
+      axios.put(`https://cp-backend-jx53.onrender.com/api/placement/update/${newPlacement_officer._id}`, formData)
         .then((res) => {
           if (res.data.success) {
             alert(" updated successfully");
@@ -170,7 +170,7 @@ const Tables = () => {
 
   const handleDelete = (id) => {
     if (window.confirm("Are you sure you want to delete this?")) {
-      axios.delete(`http://localhost:5000/api/placement/delete/${id}`)
+      axios.delete(`https://cp-backend-jx53.onrender.com/api/placement/delete/${id}`)
         .then((res) => {
           if (res.data.success) {
             alert("Deleted successfully");
@@ -214,7 +214,7 @@ const Tables = () => {
                     <CTableDataCell>{item.p_email}</CTableDataCell>
                     <CTableDataCell>{item.p_phone}</CTableDataCell>
                     <CTableDataCell>{item.p_address}</CTableDataCell>
-                    <CTableDataCell><img style={{ height: "100px", width: "100px" }} alt='' src={`http://localhost:5000/api/upload/${item.p_photo}`} /></CTableDataCell>
+                    <CTableDataCell><img style={{ height: "100px", width: "100px" }} alt='' src={`https://cp-backend-jx53.onrender.com/api/upload/${item.p_photo}`} /></CTableDataCell>
                     <CTableDataCell>
                       <Edit item={item} />
                       <CButton color="danger" onClick={() => handleDelete(item._id)}>Delete</CButton>

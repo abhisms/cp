@@ -37,7 +37,7 @@ const ForgotPassword = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        axios.post("http://localhost:5000/api/forgotpassword/forgotpass", email_confirm)
+        axios.post("https://cp-backend-jx53.onrender.com/api/forgotpassword/forgotpass", email_confirm)
             .then((res) => {
                 console.log(res)
                 if (res.data.success) {

@@ -20,7 +20,7 @@ const FormControl = () => {
   let nav = useNavigate()
   const handleSubmit = (e) => {
     e.preventDefault()
-    axios.post("http://localhost:5000/api/category/insert", { j_category: category })
+    axios.post("https://cp-backend-jx53.onrender.com/api/category/insert", { j_category: category })
       .then((res) => {
         console.log(res)
         if (res.data.success) {

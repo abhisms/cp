@@ -29,7 +29,7 @@ const FC = () => {
     formData.append("p_address", placement_officer.p_address)
     formData.append("p_photo", placement_officer.p_photo)
 
-    axios.post("http://localhost:5000/api/placement/insert", formData)
+    axios.post("https://cp-backend-jx53.onrender.com/api/placement/insert", formData)
       .then((res) => {
         console.log(res)
         if (res.data.success) {

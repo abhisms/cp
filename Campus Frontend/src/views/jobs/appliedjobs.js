@@ -8,7 +8,7 @@ const AppliedJobs = () => {
     const student_id = localStorage.getItem('id').replace(/['"]+/g, '');
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/api/application/applied/${student_id}`)
+        axios.get(`https://cp-backend-jx53.onrender.com/api/application/applied/${student_id}`)
             .then((res) => {
                 setApplications(res.data.applications);
                 setLoading(false);
@@ -39,7 +39,7 @@ const AppliedJobs = () => {
                             <strong>Applied Job</strong>
                         </CCardHeader>
                         <CCardBody>
-                             <CCardImage orientation="top" style={{ height: "200px", width: "100%", objectFit: "cover" }} src={`http://localhost:5000/api/upload/${application.job_id.cover_photo}`} /> 
+                             <CCardImage orientation="top" style={{ height: "200px", width: "100%", objectFit: "cover" }} src={`https://cp-backend-jx53.onrender.com/api/upload/${application.job_id.cover_photo}`} /> 
                             <CCardText><strong>Company Name:</strong> {application.job_id.company_name}</CCardText>
                             <CCardText><strong>Job Title:</strong> {application.job_id.job_title}</CCardText>
                             <CCardText><strong>Job Role:</strong> {application.job_id.job_role}</CCardText>

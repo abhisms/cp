@@ -33,7 +33,7 @@ const FC = () => {
     formData.append("s_photo", student.s_photo)
     formData.append("s_resume", student.s_resume)
 
-    axios.post("http://localhost:5000/api/student/insert", formData)
+    axios.post("https://cp-backend-jx53.onrender.com/api/student/insert", formData)
       .then((res) => {
         console.log(res)
         if (res.data.success) {
@@ -50,7 +50,7 @@ const FC = () => {
   
   const [branch, setBranch] = useState([])
   useEffect(() => {
-    axios.get("http://localhost:5000/api/branch/get")
+    axios.get("https://cp-backend-jx53.onrender.com/api/branch/get")
       .then((res) => {
         setBranch(res.data.branch);
       })
@@ -61,7 +61,7 @@ const FC = () => {
 
   const [hod, setHod] = useState([])
   useEffect(() => {
-    axios.get("http://localhost:5000/api/hod/get")
+    axios.get("https://cp-backend-jx53.onrender.com/api/hod/get")
       .then((res) => {
         setHod(res.data.hod);
       })

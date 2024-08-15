@@ -30,7 +30,7 @@ const Tables = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get("http://localhost:5000/api/category/get")
+    axios.get("https://cp-backend-jx53.onrender.com/api/category/get")
       .then((res) => {
         setCategory(res.data.category);
       })
@@ -48,7 +48,7 @@ const Tables = () => {
     };
 
     const handleEdit = () => {
-      axios.put(`http://localhost:5000/api/category/update/${newCategory._id}`, newCategory)
+      axios.put(`https://cp-backend-jx53.onrender.com/api/category/update/${newCategory._id}`, newCategory)
         .then((res) => {
           if (res.data.success) {
             alert("Job category updated successfully");
@@ -103,7 +103,7 @@ const Tables = () => {
 
   const handleDelete = (id) => {
     if (window.confirm("Are you sure you want to delete this job category?")) {
-      axios.delete(`http://localhost:5000/api/category/delete/${id}`)
+      axios.delete(`https://cp-backend-jx53.onrender.com/api/category/delete/${id}`)
         .then((res) => {
           if (res.data.success) {
             alert("Job category deleted successfully");

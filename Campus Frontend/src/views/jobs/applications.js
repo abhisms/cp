@@ -25,7 +25,7 @@ function Row(props) {
   const { row } = props;
   const [open, setOpen] = useState(false);
   const handleChange = (appId, status) => {
-    axios.put(`http://localhost:5000/api/application/update/${appId}`, { status })
+    axios.put(`https://cp-backend-jx53.onrender.com/api/application/update/${appId}`, { status })
     .then((res)=>{
       console.log(res)
     })
@@ -52,7 +52,7 @@ function Row(props) {
         <TableCell>{row.student_id.s_email}</TableCell>
         <TableCell>
           <a
-            href={`http://localhost:5000/api/upload/${row.resume}`}
+            href={`https://cp-backend-jx53.onrender.com/api/upload/${row.resume}`}
             target="_blank"
             rel="noopener noreferrer"
             style={{ color: 'blue' }}
@@ -135,7 +135,7 @@ const Applications = () => {
   useEffect(() => {
     const fetchApplications = async () => {
       try {
-        const res = await axios.get('http://localhost:5000/api/application/all');
+        const res = await axios.get('https://cp-backend-jx53.onrender.com/api/application/all');
         const applicationsData = res.data.applications;
 
         const detailedApplications = await Promise.all(
@@ -144,9 +144,9 @@ const Applications = () => {
             const studentId = application.student_id._id;
             const courseId = application.course_id._id;
 
-            const jobRes = await axios.get(`http://localhost:5000/api/application/job/get/${jobId}`);
-            const studentRes = await axios.get(`http://localhost:5000/api/application/student/get/${studentId}`);
-            const branchRes = await axios.get(`http://localhost:5000/api/application/branch/get/${courseId}`);
+            const jobRes = await axios.get(`https://cp-backend-jx53.onrender.com/api/application/job/get/${jobId}`);
+            const studentRes = await axios.get(`https://cp-backend-jx53.onrender.com/api/application/student/get/${studentId}`);
+            const branchRes = await axios.get(`https://cp-backend-jx53.onrender.com/api/application/branch/get/${courseId}`);
 
             return {
               ...application,

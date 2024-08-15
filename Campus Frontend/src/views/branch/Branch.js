@@ -30,7 +30,7 @@ const Tables = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get("http://localhost:5000/api/branch/get")
+    axios.get("https://cp-backend-jx53.onrender.com/api/branch/get")
       .then((res) => {
         setBranch(res.data.branch);
       })
@@ -48,7 +48,7 @@ const Tables = () => {
     };
 
     const handleEdit = () => {
-      axios.put(`http://localhost:5000/api/branch/update/${newBranch._id}`, newBranch)
+      axios.put(`https://cp-backend-jx53.onrender.com/api/branch/update/${newBranch._id}`, newBranch)
         .then((res) => {
           if (res.data.success) {
             alert("Branch updated successfully");
@@ -103,7 +103,7 @@ const Tables = () => {
 
   const handleDelete = (id) => {
     if (window.confirm("Are you sure you want to delete this branch?")) {
-      axios.delete(`http://localhost:5000/api/branch/delete/${id}`)
+      axios.delete(`https://cp-backend-jx53.onrender.com/api/branch/delete/${id}`)
         .then((res) => {
           if (res.data.success) {
             alert("Branch deleted successfully");
